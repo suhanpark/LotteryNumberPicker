@@ -8,7 +8,9 @@ def run(mod):
 		print(best_combinations)
 	else:
 		for item in best_combinations:
-			print(item)
+			n1, n2, n3, n4, n5, mega_multiplier = \
+				item[0][0], item[0][1], item[0][2], item[0][3], item[0][4], item[1]
+			print("Numbers: {}, {}, {}, {}, {} | Mega Ball: {}".format(n1, n2, n3, n4, n5, mega_multiplier))
 	print("Data based on the past winning numbers from 1996\n")
 
 if __name__ == '__main__':

@@ -100,3 +100,31 @@ def find_best(end_year):
 			best.append(comb)
 	best_finals = list(itertools.product(best, mm))
 	return best_finals
+
+
+# link1 = "https://www.lottery.net/mega-millions/numbers/2021"
+# link2 = "https://www.lottery.net/mega-millions/numbers/2020"
+# link3 = "https://www.lottery.net/mega-millions/numbers/2019"
+# link4 = "https://www.lottery.net/mega-millions/numbers/2018"
+# print(get_mega_multiplier(get_source(link1)))
+# print(get_mega_multiplier(get_source(link2)))
+# print(get_mega_multiplier(get_source(link3)))
+# print(get_mega_multiplier(get_source(link4)))
+
+#print(find_roster(2021))
+#print(finalize_roster(2021))
+#print(find_best(2021))
+
+from datetime import datetime
+
+year = int(str(datetime.now())[:4])
+best_combinations = find_best(year)
+print("The best combination(s):")
+if len(best_combinations[0]) == 1:
+	print(best_combinations)
+else:
+	for item in best_combinations:
+		n1, n2, n3, n4, n5, mega_multiplier = \
+			item[0][0], item[0][1], item[0][2], item[0][3], item[0][4], item[1]
+		print("Numbers: {}, {}, {}, {}, {} | Mega Ball: {}".format(n1, n2, n3, n4, n5, mega_multiplier))
+print("Data based on the past winning numbers from 1996\n")
