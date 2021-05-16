@@ -1,6 +1,6 @@
 from datetime import datetime
 
-def run(mod):
+def run(mod): # takes user's choice as a parameter, prints results in easily readable interface
 	year = int(str(datetime.now())[:4])
 	best_combinations = mod.find_best(year)
 	print("The best combination(s):")
